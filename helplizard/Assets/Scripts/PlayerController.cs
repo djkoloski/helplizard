@@ -3,13 +3,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 	// Exposed variables
-	[Header("Collision")]
-	[SerializeField]
-	private float _colliderWidth;
-	[SerializeField]
-	private float _colliderHeight;
-	[SerializeField]
-	private Vector2 _colliderOffset;
 
 	// Public variables
 	private PlayerController _instance;
@@ -26,4 +19,6 @@ public class PlayerController : MonoBehaviour
 	{
 		_instance = this;
 	}
+
+	// Private interface
 }
