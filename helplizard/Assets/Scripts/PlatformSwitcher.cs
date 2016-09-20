@@ -2,13 +2,22 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class PlatformSwitcher : MonoBehaviour, IPointerClickHandler {
+public class PlatformSwitcher : MonoBehaviour {
 
 	public GameObject platform;
 
-	public void OnPointerClick(PointerEventData data)
+	void Update()
 	{
-		StartCoroutine(MoveOverSeconds(platform, this.transform.position, 2f));
+		if (Input.GetMouseButtonDown(0))
+		{
+			Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+			if(hit.collider != null)
+			{
+				StartCoroutine(MoveOverSeconds(platform, this.transform.position, 2f));
+			}
+
+		}
 	}
 
 	public IEnumerator MoveOverSpeed(GameObject platform, Vector3 end, float speed)
