@@ -8,7 +8,8 @@ public class UIControl : MonoBehaviour, IPointerClickHandler
 	// Exposed variables
 	[SerializeField]
 	private Text _text;
-
+	[SerializeField]
+	private Image _image;
 	// Private variables
 	private Animator _animator;
 
@@ -24,6 +25,10 @@ public class UIControl : MonoBehaviour, IPointerClickHandler
 	public void SetText(string text)
 	{
 		_text.text = text;
+	}
+	public void EnableButt()
+	{
+		_image.enabled = true;
 	}
 	public void SetCallback(Callback callback)
 	{

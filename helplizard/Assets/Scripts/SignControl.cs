@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class SignControl : MonoBehaviour
 {
 	public string signText;
+	[SerializeField]
+	private bool _isButt;
 
 	private Animator _animator;
 
@@ -31,7 +33,14 @@ public class SignControl : MonoBehaviour
 
 	public void InstantiateCanvas()
 	{
-		HUDController.Instance.ShowTextBubble(signText, null);
+		if (_isButt)
+		{
+			HUDController.Instance.ShowButt(_isButt, null);
+		}
+		else
+		{
+			HUDController.Instance.ShowTextBubble(signText, null);
+		}
 		_animator.Play("sign_idle");
 	}
 }
