@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour
@@ -52,15 +51,14 @@ public class PlayerController : MonoBehaviour
 			vertSpeed);
 
 		if (transform.position.y < Level.Instance.KillPlaneHeight)
-			Die();
+			Die(Level.Instance.RandomFallDeath);
 	}
 
 	// Private interface
-	private void Die()
+	private void Die(string deathStatement)
 	{
 		_alive = false;
 
-		HUDController.Instance.FadeOut(
-			() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+		HUDController.Instance.FadeOut(() => HUDController.Instance.ShowTextBubble(deathStatement, Level.Instance.Reset));
 	}
 }

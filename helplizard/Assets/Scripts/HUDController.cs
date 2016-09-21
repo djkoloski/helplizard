@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
+	// Exposed variables
+	[SerializeField]
+	private GameObject _textBubblePrefab;
+
 	// Public variables
 	private static HUDController _instance;
 	public static HUDController Instance
@@ -45,5 +50,16 @@ public class HUDController : MonoBehaviour
 			_callback = null;
 			temp();
 		}
+	}
+	public void ShowTextBubble(string content, Callback callback)
+	{
+		GameObject textBubbleGO = Instantiate(_textBubblePrefab);
+		textBubbleGO.transform.SetParent(_canvas.transform);
+		RectTransform rect = textBubbleGO.GetComponent<RectTransform>();
+		rect.offsetMax = rect.offsetMin = Vector2.zero;
+
+		UIControl textBubble = textBubbleGO.GetComponent<UIControl>();
+		textBubble.SetText(content);
+		textBubble.SetCallback(callback);
 	}
 }

@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class SignControl : MonoBehaviour
 {
-	public GameObject guiSign;
 	public string signText;
 
 	private Animator _animator;
@@ -29,16 +28,10 @@ public class SignControl : MonoBehaviour
 			}
 		}
 	}
-	
+
 	public void InstantiateCanvas()
 	{
-		GameObject gui = Instantiate(guiSign);
-		gui.transform.SetParent(HUDController.Instance.Canvas.transform);
-		RectTransform rect = gui.GetComponent<RectTransform>();
-		rect.offsetMax = new Vector2(0, 0);
-		rect.offsetMin = new Vector2(0, 0);
-		Text text = gui.transform.FindChild("Text").GetComponent<Text>();
-		text.text = signText;
+		HUDController.Instance.ShowTextBubble(signText, null);
 		_animator.Play("sign_idle");
 	}
 }
