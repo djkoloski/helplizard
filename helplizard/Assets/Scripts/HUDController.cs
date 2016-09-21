@@ -6,6 +6,8 @@ public class HUDController : MonoBehaviour
 	// Exposed variables
 	[SerializeField]
 	private GameObject _textBubblePrefab;
+	[SerializeField]
+	private GameObject _narratorPrefab;
 
 	// Public variables
 	private static HUDController _instance;
@@ -75,5 +77,17 @@ public class HUDController : MonoBehaviour
 		UIControl textBubble = textBubbleGO.GetComponent<UIControl>();
 		textBubble.SetText(content);
 		textBubble.SetCallback(callback);
+	}
+	public void ShowNarrator(string content, NarratorType type, Callback callback)
+	{
+		GameObject narratorGO = Instantiate(_narratorPrefab);
+		narratorGO.transform.SetParent(_canvas.transform);
+		RectTransform rect = narratorGO.GetComponent<RectTransform>();
+		rect.offsetMax = rect.offsetMin = new Vector2(50.0f, 50.0f);
+
+		NarratorController narrator = narratorGO.GetComponent<NarratorController>();
+		narrator.SetText(content);
+		narrator.SetCallback(callback);
+		narrator.SetType(type);
 	}
 }

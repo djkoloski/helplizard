@@ -1,13 +1,18 @@
 fileFormatVersion: 2
 guid: 737aad110de0736429932fe332ffc9bd
-timeCreated: 1474424567
+timeCreated: 1474445658
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Narrator_Speech_Appear_0
+    21300002: Narrator_Speech_Appear_1
+    21300004: Narrator_Speech_Appear_2
+    21300006: Narrator_Speech_Appear_3
+    21300008: Narrator_Speech_Appear_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -26,11 +31,11 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 2048
+  textureFormat: -3
+  maxTextureSize: 8192
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,11 +43,11 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0, y: 0}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -51,7 +56,72 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Narrator_Speech_Appear_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 1875
+        height: 279
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Narrator_Speech_Appear_1
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 0
+        width: 1875
+        height: 279
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Narrator_Speech_Appear_2
+      rect:
+        serializedVersion: 2
+        x: 3820
+        y: 0
+        width: 1875
+        height: 279
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Narrator_Speech_Appear_3
+      rect:
+        serializedVersion: 2
+        x: 5715
+        y: 0
+        width: 1875
+        height: 279
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Narrator_Speech_Appear_4
+      rect:
+        serializedVersion: 2
+        x: 7610
+        y: 0
+        width: 1865
+        height: 279
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

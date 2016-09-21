@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 using UnityEditor.Animations;
 using System.Collections;
@@ -13,6 +14,7 @@ public class SpriteSheetImporter : EditorWindow
 	AnimatorController controller;
 	string directory;
 	string spritePath;
+	bool isUI;
 
 	[MenuItem("HelpLizard/Import SpriteSheet")]
 	static void Init()
@@ -34,6 +36,8 @@ public class SpriteSheetImporter : EditorWindow
 		wrap = (WrapMode)EditorGUILayout.EnumPopup("Wrap", wrap);
 		controller = (AnimatorController)EditorGUILayout.ObjectField("Controller", controller, typeof(AnimatorController), false);
 		spritePath = EditorGUILayout.TextField("Sprite path", spritePath);
+		isUI = EditorGUILayout.Toggle("Is UI?", isUI);
+
 		if (GUILayout.Button("Import"))
 			ImportAnimation();
 
@@ -131,7 +135,7 @@ public class SpriteSheetImporter : EditorWindow
 		AnimationUtility.SetAnimationClipSettings(clip, settings);
 
 		EditorCurveBinding binding = new EditorCurveBinding();
-		binding.type = typeof(SpriteRenderer);
+		binding.type = (isUI ? typeof(Image) : typeof(SpriteRenderer));
 		binding.path = spritePath;
 		binding.propertyName = "m_Sprite";
 

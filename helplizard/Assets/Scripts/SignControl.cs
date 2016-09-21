@@ -7,6 +7,10 @@ using UnityEngine.EventSystems;
 public class SignControl : MonoBehaviour
 {
 	public string signText;
+	[SerializeField]
+	private bool _isNarrator;
+	[SerializeField]
+	private NarratorType _narratorType;
 
 	private Animator _animator;
 
@@ -32,7 +36,11 @@ public class SignControl : MonoBehaviour
 
 	public void InstantiateCanvas()
 	{
-		HUDController.Instance.ShowTextBubble(signText, null);
+		if (_isNarrator)
+			HUDController.Instance.ShowNarrator(signText, _narratorType, null);
+		else
+			HUDController.Instance.ShowTextBubble(signText, null);
+
 		_animator.Play("sign_idle");
 	}
 }
