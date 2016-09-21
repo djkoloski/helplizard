@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class PlatformSwitcher : MonoBehaviour {
 
 	public GameObject platform;
+	public float platformSpeed;
 
 	void Update()
 	{
@@ -14,7 +15,7 @@ public class PlatformSwitcher : MonoBehaviour {
 			RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
 			if(hit.collider != null)
 			{
-				StartCoroutine(MoveOverSeconds(platform, this.transform.position, 2f));
+				StartCoroutine(MoveOverSeconds(platform, this.transform.position, platformSpeed));
 			}
 
 		}
@@ -25,7 +26,7 @@ public class PlatformSwitcher : MonoBehaviour {
 		// speed should be 1 unit per second
 		while (platform.transform.position != end)
 		{
-			platform.transform.position = Vector3.MoveTowards(platform.transform.position, end, speed * Time.deltaTime);
+			platform.transform.position = Vector3.MoveTowards(platform.transform.position, end, speed / Time.deltaTime);
 			yield return new WaitForEndOfFrame();
 		}
 	}
