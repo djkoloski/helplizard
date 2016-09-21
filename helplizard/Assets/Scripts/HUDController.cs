@@ -51,6 +51,20 @@ public class HUDController : MonoBehaviour
 			temp();
 		}
 	}
+	public void FadeIn(Callback callback)
+	{
+		_callback = callback;
+		_animator.Play("FadeIn");
+	}
+	public void OnFadeInFinished()
+	{
+		if (_callback != null)
+		{
+			Callback temp = _callback;
+			_callback = null;
+			temp();
+		}
+	}
 	public void ShowTextBubble(string content, Callback callback)
 	{
 		GameObject textBubbleGO = Instantiate(_textBubblePrefab);
