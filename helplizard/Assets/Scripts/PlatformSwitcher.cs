@@ -15,6 +15,7 @@ public class PlatformSwitcher : MonoBehaviour {
 			RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
 			if(hit.collider != null && hit.collider.gameObject == gameObject)
 			{
+				platform.GetComponent<BoxCollider2D>().enabled = false;
 				StartCoroutine(MoveOverSpeed(platform, this.transform.position, platformSpeed));
 			}
 		}
@@ -27,6 +28,7 @@ public class PlatformSwitcher : MonoBehaviour {
 			platform.transform.position = Vector3.MoveTowards(platform.transform.position, end, speed * Time.deltaTime);
 			yield return new WaitForEndOfFrame();
 		}
+		platform.GetComponent<BoxCollider2D>().enabled = true;
 	}
 
 	void OnDrawGizmosSelected()
