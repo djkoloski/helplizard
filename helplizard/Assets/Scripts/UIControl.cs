@@ -19,6 +19,10 @@ public class UIControl : MonoBehaviour, IPointerClickHandler
 	{
 		_animator = GetComponent<Animator>();
 	}
+	public void Start()
+	{
+		PlayerController.Instance.Disable();
+	}
 
 	// Public interface
 	public void SetText(string text)
@@ -42,5 +46,7 @@ public class UIControl : MonoBehaviour, IPointerClickHandler
 			temp();
 
 		Destroy(gameObject);
+
+		PlayerController.Instance.Enable();
 	}
 }

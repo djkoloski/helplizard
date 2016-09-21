@@ -88,7 +88,7 @@ public class SpriteSheetImporter : EditorWindow
 		importer.maxTextureSize = 8192;
 		importer.textureFormat = TextureImporterFormat.AutomaticTruecolor;
 		importer.spriteImportMode = SpriteImportMode.Multiple;
-		importer.filterMode = FilterMode.Point;
+		importer.filterMode = FilterMode.Bilinear;
 		importer.spritePivot = Vector2.zero;
 		importer.spritePixelsPerUnit = pixelsPerUnit;
 		importer.mipmapEnabled = false;

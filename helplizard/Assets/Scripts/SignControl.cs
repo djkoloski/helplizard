@@ -24,6 +24,7 @@ public class SignControl : MonoBehaviour
 			if (hit.collider != null && hit.collider.gameObject == gameObject)
 			{
 				_animator.Play("sign_click");
+				PlayerController.Instance.OnReacted();
 				CameraController.Instance.ZoomIn();
 			}
 		}

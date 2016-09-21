@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 2589944820acd944bb2b3839366ca3b5
-timeCreated: 1474442302
+guid: 697e15a10f431bf4fa327c2436a58d24
+timeCreated: 1474443852
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Lizard_Die_0
-    21300002: Lizard_Die_1
-    21300004: Lizard_Die_2
-    21300006: Lizard_Die_3
-    21300008: Lizard_Die_4
-    21300010: Lizard_Die_5
-    21300012: Lizard_Die_6
+    21300000: Lizard_Run_0
+    21300002: Lizard_Run_1
+    21300004: Lizard_Run_2
+    21300006: Lizard_Run_3
+    21300008: Lizard_Run_4
+    21300010: Lizard_Run_5
+    21300012: Lizard_Run_6
+    21300014: Lizard_Run_7
+    21300016: Lizard_Run_8
+    21300018: Lizard_Run_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,7 +63,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lizard_Die_0
+      name: Lizard_Run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -73,7 +76,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Lizard_Die_1
+      name: Lizard_Run_1
       rect:
         serializedVersion: 2
         x: 179
@@ -86,7 +89,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Lizard_Die_2
+      name: Lizard_Run_2
       rect:
         serializedVersion: 2
         x: 358
@@ -99,7 +102,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Lizard_Die_3
+      name: Lizard_Run_3
       rect:
         serializedVersion: 2
         x: 537
@@ -112,7 +115,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Lizard_Die_4
+      name: Lizard_Run_4
       rect:
         serializedVersion: 2
         x: 716
@@ -125,7 +128,7 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Lizard_Die_5
+      name: Lizard_Run_5
       rect:
         serializedVersion: 2
         x: 895
@@ -138,10 +141,49 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Lizard_Die_6
+      name: Lizard_Run_6
       rect:
         serializedVersion: 2
         x: 1074
+        y: 0
+        width: 179
+        height: 223
+      alignment: 9
+      pivot: {x: 0.6075069, y: 0.05599878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lizard_Run_7
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 0
+        width: 179
+        height: 223
+      alignment: 9
+      pivot: {x: 0.6075069, y: 0.05599878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lizard_Run_8
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 0
+        width: 179
+        height: 223
+      alignment: 9
+      pivot: {x: 0.6075069, y: 0.05599878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lizard_Run_9
+      rect:
+        serializedVersion: 2
+        x: 1611
         y: 0
         width: 179
         height: 223
