@@ -9,8 +9,14 @@ public class HUDController : MonoBehaviour
 		get { return _instance; }
 	}
 
+	public Canvas Canvas
+	{
+		get { return _canvas; }
+	}
+
 	// Private variables
 	private Animator _animator;
+	private Canvas _canvas;
 
 	private Callback _callback;
 
@@ -20,6 +26,7 @@ public class HUDController : MonoBehaviour
 		_instance = this;
 
 		_animator = GetComponent<Animator>();
+		_canvas = GetComponent<Canvas>();
 
 		_callback = null;
 	}

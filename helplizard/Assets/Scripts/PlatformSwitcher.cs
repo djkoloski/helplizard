@@ -6,7 +6,6 @@ public class PlatformSwitcher : MonoBehaviour {
 
 	public GameObject platform;
 	public float platformSpeed;
-	public string ID;
 
 	void Update()
 	{
@@ -14,11 +13,10 @@ public class PlatformSwitcher : MonoBehaviour {
 		{
 			Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
-			if(hit.collider != null && hit.collider.name == "EmptyPlatform_" + ID)
+			if(hit.collider != null && hit.collider.gameObject == gameObject)
 			{
 				StartCoroutine(MoveOverSpeed(platform, this.transform.position, platformSpeed));
 			}
-
 		}
 	}
 
