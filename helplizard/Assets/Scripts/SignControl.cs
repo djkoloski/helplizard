@@ -25,6 +25,7 @@ public class SignControl : MonoBehaviour
 			if (hit.collider != null && hit.collider.gameObject == gameObject)
 			{
 				_animator.Play("sign_click");
+				CameraController.Instance.ZoomIn();
 			}
 		}
 	}
@@ -36,7 +37,7 @@ public class SignControl : MonoBehaviour
 		RectTransform rect = gui.GetComponent<RectTransform>();
 		rect.offsetMax = new Vector2(0, 0);
 		rect.offsetMin = new Vector2(0, 0);
-		Text text = gui.transform.GetChild(0).GetComponent<Text>();
+		Text text = gui.transform.FindChild("Text").GetComponent<Text>();
 		text.text = signText;
 		_animator.Play("sign_idle");
 	}
