@@ -10,8 +10,10 @@ public class UIControl : MonoBehaviour, IPointerClickHandler {
 	{
 		_animator = GetComponent<Animator>();
 	}
+
 	public void OnPointerClick(PointerEventData eventData)
 	{
+		CameraController.Instance.ZoomOut();
 		_animator.Play("sign_exit");
 	}
 
