@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 		if (!_alive)
 			return;
 
-		_grounded = Physics2D.Raycast(transform.position, Vector2.down, 0.1f, ~Layers.IgnoreRaycastsMask);
+		_grounded = Physics2D.Raycast(transform.position, Vector2.down, 0.1f, ~Layers.AllIgnoreRaycasts);
 
 		float vertSpeed = _rigidbody2D.velocity.y;
 		if (Input.GetAxis("Vertical") > 0.1f && _grounded)

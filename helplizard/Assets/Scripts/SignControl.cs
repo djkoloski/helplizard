@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class SignControl : MonoBehaviour, IPointerClickHandler {
-
-	public Canvas canvas;
+public class SignControl : MonoBehaviour
+{
 	public GameObject guiSign;
 	public string signText;
 
@@ -17,15 +16,23 @@ public class SignControl : MonoBehaviour, IPointerClickHandler {
 		_animator = GetComponent<Animator>();
 	}
 
-	public void OnPointerClick(PointerEventData data)
+	public void Update()
 	{
-		_animator.Play("sign_click");
+		if (Input.GetMouseButtonDown(0))
+		{
+			Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+			if (hit.collider != null && hit.collider.gameObject == gameObject)
+			{
+				_animator.Play("sign_click");
+			}
+		}
 	}
 	
 	public void InstantiateCanvas()
 	{
-		GameObject gui = (GameObject)Instantiate(guiSign);
-		gui.transform.SetParent(canvas.transform);
+		GameObject gui = Instantiate(guiSign);
+		gui.transform.SetParent(HUDController.Instance.Canvas.transform);
 		RectTransform rect = gui.GetComponent<RectTransform>();
 		rect.offsetMax = new Vector2(0, 0);
 		rect.offsetMin = new Vector2(0, 0);
