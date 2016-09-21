@@ -11,6 +11,8 @@ public class SignControl : MonoBehaviour
 	private bool _isNarrator;
 	[SerializeField]
 	private NarratorType _narratorType;
+	[SerializeField]
+	private bool _isButt;
 
 	private Animator _animator;
 
@@ -37,10 +39,17 @@ public class SignControl : MonoBehaviour
 	public void InstantiateCanvas()
 	{
 		if (_isNarrator)
+		{
 			HUDController.Instance.ShowNarrator(signText, _narratorType, null);
+		}
+		else if (_isButt)
+		{
+			HUDController.Instance.ShowButt(_isButt, null);
+		}
 		else
+		{
 			HUDController.Instance.ShowTextBubble(signText, null);
-
+		}
 		_animator.Play("sign_idle");
 	}
 }

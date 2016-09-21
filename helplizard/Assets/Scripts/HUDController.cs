@@ -8,6 +8,8 @@ public class HUDController : MonoBehaviour
 	private GameObject _textBubblePrefab;
 	[SerializeField]
 	private GameObject _narratorPrefab;
+	[SerializeField]
+	private GameObject _buttImagePrefab;
 
 	// Public variables
 	private static HUDController _instance;
@@ -89,5 +91,20 @@ public class HUDController : MonoBehaviour
 		narrator.SetText(content);
 		narrator.SetCallback(callback);
 		narrator.SetType(type);
+	}
+	public void ShowButt(bool butt, Callback callback)
+	{
+		GameObject textBubbleGO = Instantiate(_textBubblePrefab);
+		textBubbleGO.transform.SetParent(_canvas.transform);
+		RectTransform rect = textBubbleGO.GetComponent<RectTransform>();
+		rect.offsetMax = rect.offsetMin = Vector2.zero;
+
+		UIControl textBubble = textBubbleGO.GetComponent<UIControl>();
+		textBubble.SetText("");
+		textBubble.SetCallback(callback);
+
+		UIControl buttImage = textBubbleGO.GetComponent<UIControl>();
+		buttImage.EnableButt();
+		buttImage.SetCallback(callback);
 	}
 }
